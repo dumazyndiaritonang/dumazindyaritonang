@@ -1,0 +1,9 @@
+@import 'bootstrap/scss/bootstrap';
+
+// Patch untuk deprecation warning
+@function abs($number) {
+  @if type-of($number) == 'number' and unit($number) == '%' {
+    @return $number;
+  }
+  @return math.abs($number);
+}
